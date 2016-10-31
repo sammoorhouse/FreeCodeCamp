@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       /* eslint-disable no-unused-vars */
       .flatMap(({ text, testString }) => {
         const assert = chai.assert;
-        /* eslint-enable no-unused-vars */
+      /* eslint-enable no-unused-vars */
         const newTest = { text, testString };
         let test;
         let __result;
