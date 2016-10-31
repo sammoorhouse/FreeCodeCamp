@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var common = parent.__common;
   var frameId = window.__frameId;
-  var frameReady = common[frameId + 'Ready$'] || {
-    onNext() {}
-  };
+  var frameReady = common[frameId + 'Ready$'] || { onNext() {} };
   var Rx = document.Rx;
   var helpers = Rx.helpers;
   var chai = parent.chai;
@@ -31,11 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.__runTests$ = function runTests$(tests = []) {
     /* eslint-disable no-unused-vars */
-    const editor = {
-      getValue() {
-        return source;
-      }
-    };
+    const editor = { getValue() { return source; } };
     const code = source;
 
     // if(what?)
@@ -54,16 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // add delay here for firefox to catch up
       .delay(200)
       /* eslint-disable no-unused-vars */
-      .flatMap(({
-        text,
-        testString
-      }) => {
+      .flatMap(({ text, testString }) => {
         const assert = chai.assert;
         /* eslint-enable no-unused-vars */
-        const newTest = {
-          text,
-          testString
-        };
+        const newTest = { text, testString };
         let test;
         let __result;
         try {
