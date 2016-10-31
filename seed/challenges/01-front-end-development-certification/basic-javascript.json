@@ -3386,7 +3386,7 @@
       ],
       "tests": [
         "assert(code.match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(asthelpers.countStatements(codetree, \"IfStatement\") === 1, 'message: You should only have one <code>if</code> statement');",
         "assert(testLogicalAnd(0) === \"No\", 'message: <code>testLogicalAnd(0)</code> should return \"No\"');",
         "assert(testLogicalAnd(24) === \"No\", 'message: <code>testLogicalAnd(24)</code> should return \"No\"');",
         "assert(testLogicalAnd(25) === \"Yes\", 'message: <code>testLogicalAnd(25)</code> should return \"Yes\"');",

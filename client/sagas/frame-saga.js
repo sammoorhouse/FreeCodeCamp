@@ -9,6 +9,8 @@ import {
   checkChallenge,
   updateTests
 } from '../../common/app/routes/challenges/redux/actions';
+import * as asthelpers from '../utils/ast-helpers';
+import * as esprima from 'esprima-fb';
 
 // we use three different frames to make them all essentially pure functions
 const mainId = 'fcc-main-frame';
@@ -78,6 +80,8 @@ function frameMain({ build, source } = {}, document, proxyLogger$) {
 function frameTests({ build, source } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
+  tests.asthelpers = asthelpers;
+  tests.esprima = esprima;
   tests.Rx = Rx;
   tests.__source = source;
   tests.open();
